@@ -1,26 +1,189 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Logo styles */
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+@media (min-width: theme(--breakpoint-2xl)) {
+    .container {
+        max-width: 1450px; /* Custom 2xl max-width */
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+.read-the-docs {
+    color: #888;
+}
+
+/* Tailwind CSS 4 Theme Configuration */
+@theme {
+    /* SIGAP Color Palette - HSL Format */
+    --color-background: hsl(197 91% 75%); /* #7ed9f8 - Light sky blue */
+    --color-foreground: hsl(225 63% 11%); /* #0b0f2c - Dark navy blue */
+    --color-card: hsl(0 0% 100%); /* #ffffff - White */
+    --color-card-foreground: hsl(225 63% 11%); /* #0b0f2c - Dark navy blue */
+    --color-popover: hsl(0 0% 100%);
+    --color-popover-foreground: hsl(225 63% 11%);
+    --color-primary: hsl(208 66% 48%); /* #297dd4 - Bright blue */
+    --color-primary-foreground: hsl(0 0% 100%);
+    --color-secondary: hsl(197 80% 60%); /* #4db1ec - Bright blue secondary */
+    --color-secondary-foreground: hsl(225 63% 11%);
+    --color-muted: hsl(186 87% 94%); /* #d8f6f9 - Bluish white */
+    --color-muted-foreground: hsl(225 63% 11%);
+    --color-accent: hsl(186 87% 94%); /* #d8f6f9 - Subtle accent */
+    --color-accent-foreground: hsl(225 63% 11%);
+    --color-destructive: hsl(0 84% 60%); /* #ef4444 */
+    --color-destructive-foreground: hsl(0 0% 100%);
+    --color-border: hsl(186 87% 94%);
+    --color-input: hsl(0 0% 100%);
+    --color-ring: hsl(208 66% 48%);
+
+    /* Sidebar colors - HSL Format */
+    --color-sidebar: hsl(0 0% 98%); /* #fafafa */
+    --color-sidebar-foreground: hsl(0 0% 32%); /* #525252 */
+    --color-sidebar-primary: hsl(0 0% 9%); /* #171717 */
+    --color-sidebar-primary-foreground: hsl(0 0% 98%); /* #fafafa */
+    --color-sidebar-accent: hsl(0 0% 96%); /* #f5f5f5 */
+    --color-sidebar-accent-foreground: hsl(0 0% 9%); /* #171717 */
+    --color-sidebar-border: hsl(0 0% 90%); /* #e5e5e5 */
+    --color-sidebar-ring: hsl(217 91% 60%); /* #3b82f6 */
+
+    /* Border radius */
+    --radius: 0.75rem;
+    --radius-lg: 0.75rem;
+    --radius-md: calc(0.75rem - 2px);
+    --radius-sm: calc(0.75rem - 4px);
+}
+
+/* Custom CSS Variables for complex values */
+@layer base {
+    :root {
+        /* Custom SIGAP Design Tokens - HSL Format */
+        --gradient-hero: linear-gradient(
+            135deg,
+            hsl(197 91% 75%),
+            hsl(186 87% 94%)
+        );
+        --gradient-card: linear-gradient(
+            180deg,
+            hsl(0 0% 100%),
+            hsl(186 87% 94%)
+        );
+        --shadow-elegant: 0 10px 30px -10px hsl(208 66% 48% / 0.2);
+        --shadow-card: 0 4px 20px -4px hsl(208 66% 48% / 0.1);
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+}
+
+/* Custom utility classes for SIGAP design system */
+@layer utilities {
+    .bg-gradient-hero {
+        background-image: var(--gradient-hero);
+    }
+
+    .bg-gradient-card {
+        background-image: var(--gradient-card);
+    }
+
+    .shadow-elegant {
+        box-shadow: var(--shadow-elegant);
+    }
+
+    .shadow-card {
+        box-shadow: var(--shadow-card);
+    }
+
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+
+    .rounded-custom-lg {
+        border-radius: var(--radius-lg);
+    }
+
+    .rounded-custom-md {
+        border-radius: var(--radius-md);
+    }
+
+    .rounded-custom-sm {
+        border-radius: var(--radius-sm);
+    }
+}
+
+/* Animation keyframes */
+@keyframes accordion-down {
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--radix-accordion-content-height);
+    }
+}
+
+@keyframes accordion-up {
+    from {
+        height: var(--radix-accordion-content-height);
+    }
+    to {
+        height: 0;
+    }
+}
+
+@layer utilities {
+    .animate-accordion-down {
+        animation: accordion-down 0.2s ease-out;
+    }
+
+    .animate-accordion-up {
+        animation: accordion-up 0.2s ease-out;
+    }
 }
