@@ -5,7 +5,10 @@ import { Download, Star } from "lucide-react";
 
 const FinalCTASection = () => {
     return (
-        <section className="py-20 bg-primary relative overflow-hidden">
+        <section
+            id="download"
+            className="py-20 bg-primary relative overflow-hidden"
+        >
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center max-w-4xl mx-auto">
                     <div className="space-y-6 mb-12">
@@ -43,7 +46,7 @@ const FinalCTASection = () => {
                     </div>
 
                     {/* Stats */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-3">
                         <div className="text-center">
                             <div className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-2">
                                 50K+
@@ -67,14 +70,6 @@ const FinalCTASection = () => {
                             </div>
                             <div className="text-primary-foreground/80">
                                 Rating App Store
-                            </div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-2">
-                                15
-                            </div>
-                            <div className="text-primary-foreground/80">
-                                Kota Partner
                             </div>
                         </div>
                     </div>
