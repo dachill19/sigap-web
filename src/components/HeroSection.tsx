@@ -11,6 +11,8 @@ import {
     Clock,
     CheckCircle,
     MessageSquare,
+    Check,
+    Smartphone,
 } from "lucide-react";
 import { useCallback } from "react";
 
@@ -23,7 +25,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="relative min-h-screen bg-gradient-hero flex items-center pt-16 overflow-hidden">
+        <section className="relative min-h-screen bg-gradient-hero flex items-center pt-12 overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary rounded-full"></div>
@@ -95,24 +97,53 @@ const HeroSection = () => {
                         </div>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Button
-                                size="lg"
-                                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-elegant text-lg px-8 py-4 border-2 border-primary hover:scale-105 transition-all duration-300"
-                                onClick={() => scrollToSection("download")}
-                            >
-                                <Download className="mr-2 h-6 w-6" />
-                                Unduh Aplikasi
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-4 hover:scale-105 transition-all duration-300"
-                                onClick={() => scrollToSection("how-it-works")}
-                            >
-                                <Play className="mr-2 h-6 w-6" />
-                                Lihat Cara Kerja
-                            </Button>
+                        <div className="space-y-4">
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Button
+                                    size="lg"
+                                    className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-elegant text-lg px-8 py-4 border-2 border-primary hover:scale-105 transition-all duration-300"
+                                    onClick={() => scrollToSection("download")}
+                                >
+                                    <Download className="mr-2 h-6 w-6" />
+                                    Unduh Aplikasi
+                                </Button>
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                    className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-4 hover:scale-105 transition-all duration-300"
+                                    onClick={() =>
+                                        scrollToSection("how-it-works")
+                                    }
+                                >
+                                    <Play className="mr-2 h-6 w-6" />
+                                    Lihat Cara Kerja
+                                </Button>
+                            </div>
+
+                            {/* Action Description */}
+                            <div className="space-y-2 text-center sm:text-left">
+                                <div className="flex items-center justify-center sm:justify-start gap-2 text-foreground/70 text-sm">
+                                    <Smartphone className="h-4 w-4 text-primary" />
+                                    <span className="font-medium">
+                                        Unduh aplikasi untuk melaporkan masalah
+                                        kapan saja, di mana saja
+                                    </span>
+                                </div>
+                                <div className="flex items-center justify-center sm:justify-start gap-2 text-foreground/60 text-xs">
+                                    <div className="flex items-center gap-1">
+                                        <Check className="h-4 w-4 text-green-500 font-bold" />
+                                        <span>Gratis</span>
+                                    </div>
+                                    <div className="flex items-center gap-1">
+                                        <Check className="h-4 w-4 text-green-500 font-bold" />
+                                        <span>Mudah digunakan</span>
+                                    </div>
+                                    <div className="flex items-center gap-1">
+                                        <Check className="h-4 w-4 text-green-500 font-bold" />
+                                        <span>Respon cepat</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
