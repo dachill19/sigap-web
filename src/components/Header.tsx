@@ -8,6 +8,13 @@ import { useState } from "react";
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <header className="fixed top-0 w-full bg-card backdrop-blur-sm border-b border-border z-50">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -24,24 +31,24 @@ const Header = () => {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center space-x-6">
-                    <a
-                        href="#masalah"
+                    <button
+                        onClick={() => scrollToSection("problem")}
                         className="text-foreground hover:text-primary transition-colors"
                     >
                         Masalah
-                    </a>
-                    <a
-                        href="#solusi"
+                    </button>
+                    <button
+                        onClick={() => scrollToSection("solution")}
                         className="text-foreground hover:text-primary transition-colors"
                     >
                         Solusi
-                    </a>
-                    <a
-                        href="#faq"
+                    </button>
+                    <button
+                        onClick={() => scrollToSection("faq")}
                         className="text-foreground hover:text-primary transition-colors"
                     >
                         FAQ
-                    </a>
+                    </button>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -77,24 +84,24 @@ const Header = () => {
             {isMenuOpen && (
                 <div className="md:hidden bg-card border-b border-border">
                     <nav className="container mx-auto px-4 py-4 space-y-4">
-                        <a
-                            href="#masalah"
+                        <button
+                            onClick={() => scrollToSection("problem")}
                             className="block text-foreground hover:text-primary transition-colors"
                         >
                             Masalah
-                        </a>
-                        <a
-                            href="#solusi"
+                        </button>
+                        <button
+                            onClick={() => scrollToSection("solution")}
                             className="block text-foreground hover:text-primary transition-colors"
                         >
                             Solusi
-                        </a>
-                        <a
-                            href="#faq"
+                        </button>
+                        <button
+                            onClick={() => scrollToSection("faq")}
                             className="block text-foreground hover:text-primary transition-colors"
                         >
                             FAQ
-                        </a>
+                        </button>
                         <Button
                             asChild
                             variant="outline"

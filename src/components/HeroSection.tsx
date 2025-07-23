@@ -15,12 +15,12 @@ import {
 import { useCallback } from "react";
 
 const HeroSection = () => {
-    const scrollToHowItWorks = useCallback(() => {
-        const element = document.getElementById("how-it-works");
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
         }
-    }, []);
+    };
 
     return (
         <section className="relative min-h-screen bg-gradient-hero flex items-center pt-16 overflow-hidden">
@@ -99,6 +99,7 @@ const HeroSection = () => {
                             <Button
                                 size="lg"
                                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-elegant text-lg px-8 py-4 border-2 border-primary hover:scale-105 transition-all duration-300"
+                                onClick={() => scrollToSection("download")}
                             >
                                 <Download className="mr-2 h-6 w-6" />
                                 Unduh Aplikasi
@@ -107,10 +108,10 @@ const HeroSection = () => {
                                 size="lg"
                                 variant="outline"
                                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-4 hover:scale-105 transition-all duration-300"
-                                onClick={scrollToHowItWorks}
+                                onClick={() => scrollToSection("how-it-works")}
                             >
                                 <Play className="mr-2 h-6 w-6" />
-                                Lihat Demo
+                                Lihat Cara Kerja
                             </Button>
                         </div>
                     </div>
