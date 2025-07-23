@@ -18,7 +18,6 @@ const Login = () => {
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Simple login validation
         if (email === "admin@example.com" && password === "1234567") {
             toast.success("Login berhasil! Mengarahkan ke dashboard...");
             setTimeout(() => {
@@ -118,8 +117,8 @@ const Login = () => {
                             </Link>
                         </div>
 
-                        <div className="text-xs text-muted-foreground text-center border-t border-border pt-4">
-                            <Shield className="h-4 w-4 inline mr-1" />
+                        <div className="flex justify-center items-center text-xs text-muted-foreground text-center border-t border-border pt-4">
+                            <Shield className="h-4 w-4 mr-1" />
                             Akses terbatas hanya untuk personel yang berwenang
                         </div>
                     </CardContent>

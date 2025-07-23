@@ -9,14 +9,17 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Logo & Description */}
                     <div className="space-y-4">
-                        <Image
-                            src="/sigap-logo.png"
-                            alt="SIGAP Logo"
-                            width={64}
-                            height={64}
-                            className="h-10 w-auto"
-                            priority={false}
-                        />
+                        <div className="inline-block p-2 bg-background/30 backdrop-blur-sm rounded-lg border border-background/20">
+                            <Image
+                                src="/sigap-logo.png"
+                                alt="SIGAP Logo"
+                                width={64}
+                                height={64}
+                                className="h-10 w-auto"
+                                priority={false}
+                            />
+                        </div>
+
                         <p className="text-background/80 text-sm leading-relaxed">
                             Platform pelaporan cerdas yang menghubungkan warga
                             dengan pemerintah daerah untuk menciptakan kota yang
