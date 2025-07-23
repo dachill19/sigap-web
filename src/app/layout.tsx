@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     description:
         "Sentra adalah platform kredibilitas digital TERBAIK untuk bisnis anda. Kami menggabungkan skor kredit prediktif Al dengan identitas terdesentralisasi (SBT) di blockchain untuk memitigasi risiko secara fundamental, mencegah fraud, dan memberdayakan keputusan finansial yang lebih aman dan akurat.",
     icons: {
-        icon: "/sentra-logo.png",
+        icon: "/sigap.png",
     },
 };
 
