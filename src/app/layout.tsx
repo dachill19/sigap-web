@@ -3,8 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
     title: "SIGAP",
-    description:
-        "Sentra adalah platform kredibilitas digital TERBAIK untuk bisnis anda. Kami menggabungkan skor kredit prediktif Al dengan identitas terdesentralisasi (SBT) di blockchain untuk memitigasi risiko secara fundamental, mencegah fraud, dan memberdayakan keputusan finansial yang lebih aman dan akurat.",
+    description: "Platform pengaduan layanan masyarakat terpadu",
     icons: {
         icon: "/sigap.png",
     },

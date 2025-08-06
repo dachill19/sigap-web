@@ -80,7 +80,7 @@ const Header = () => {
                 <Button
                     asChild
                     variant="outline"
-                    className="hidden md:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:scale-105"
+                    className="hidden md:flex border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:scale-105"
                 >
                     <Link href="/login" className="relative overflow-hidden">
                         <span className="relative z-10">Masuk Mitra Dinas</span>

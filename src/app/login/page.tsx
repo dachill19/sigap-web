@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Shield, ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -23,6 +24,12 @@ const Login = () => {
             setTimeout(() => {
                 router.push("/dashboard");
             }, 1000);
+        }
+        if (email === "admin123@example.com" && password === "81818") {
+            toast.success("Login berhasil! Mengarahkan ke dashboard...");
+            setTimeout(() => {
+                router.push("/pemda/dashboard");
+            }, 1000);
         } else {
             toast.error("Email atau password salah!");
         }
@@ -32,21 +39,27 @@ const Login = () => {
         <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
             <div className="w-full max-w-md">
                 {/* Back to Home Link */}
-                <Link
-                    href="/"
-                    className="inline-flex items-center text-foreground hover:text-primary transition-colors mb-8"
-                >
-                    <ArrowLeft className="h-4 w-4 mr-2" />
-                    Kembali ke Beranda
+                <Link href="/">
+                    <Button
+                        variant="ghost"
+                        size="sm"
+                        className="hover:bg-primary/10 hover:text-primary transition-all mb-4"
+                    >
+                        <ArrowLeft className="h-4 w-4 mr-2" />
+                        Kembali ke Beranda
+                    </Button>
                 </Link>
 
                 <Card className="shadow-elegant border-border/50 bg-card/95 backdrop-blur-sm">
                     <CardHeader className="text-center space-y-4">
                         <div className="flex items-center justify-center">
-                            <img
+                            <Image
                                 src="/sigap-logo.png"
                                 alt="SIGAP Logo"
+                                width={80}
+                                height={80}
                                 className="h-20 w-auto"
+                                priority
                             />
                         </div>
                         <CardTitle className="text-2xl text-foreground">
@@ -125,14 +138,48 @@ const Login = () => {
                 </Card>
 
                 {/* Demo Credentials */}
-                <div className="mt-6 p-4 bg-card/80 rounded-lg border border-border/50">
-                    <p className="text-xs text-muted-foreground text-center">
-                        <strong>Demo Login:</strong>
-                        <br />
-                        Email: admin@example.com
-                        <br />
-                        Password: 1234567
-                    </p>
+                <div className="mt-6 space-y-4">
+                    {/* Dinas Credentials */}
+                    <div className="p-4 bg-card/80 rounded-lg border border-border/50">
+                        <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <p className="text-sm font-medium text-foreground">
+                                Demo Login - Dashboard Dinas
+                            </p>
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                            <p>
+                                <strong>Email:</strong> admin@example.com
+                            </p>
+                            <p>
+                                <strong>Password:</strong> 1234567
+                            </p>
+                            <p className="mt-1 text-xs opacity-75">
+                                Akses ke dashboard operasional dinas terkait
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Pemda Credentials */}
+                    <div className="p-4 bg-card/80 rounded-lg border border-border/50">
+                        <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <p className="text-sm font-medium text-foreground">
+                                Demo Login - Dashboard Pemerintah Daerah
+                            </p>
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                            <p>
+                                <strong>Email:</strong> admin123@example.com
+                            </p>
+                            <p>
+                                <strong>Password:</strong> 81818
+                            </p>
+                            <p className="mt-1 text-xs opacity-75">
+                                Akses ke dashboard eksekutif pemerintah daerah
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

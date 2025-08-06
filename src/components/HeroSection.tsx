@@ -200,7 +200,7 @@ const HeroSection = () => {
                                                 Lampu jalan mati
                                             </div>
                                             <div className="text-xs text-muted-foreground">
-                                                Laporan #1235 • Dalam proses
+                                                Laporan #1235 • Dikerjakan
                                             </div>
                                         </div>
                                     </div>
